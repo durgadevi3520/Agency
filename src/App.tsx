@@ -1,6 +1,5 @@
-﻿import { useEffect } from "react";
+import { useEffect } from "react";
 import Router from "./router";
-import "./styles/button.css";
 
 function App() {
   useEffect(() => {
@@ -44,3 +43,4 @@ function App() {
 }
 
 export default App;
+

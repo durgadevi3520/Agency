@@ -30,6 +30,18 @@
   object-fit: contain;
 }
 
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
@@ -52,7 +64,12 @@
   color: var(--primary-color);
 }
 
-/* COLOR PALETTE SELECTOR */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .color-palette-container {
   position: relative;
 }
@@ -107,7 +124,6 @@
   box-shadow: 0 0 10px var(--shadow);
 }
 
-/* THEME TOGGLE */
 .theme-toggle {
   background: none;
   border: none;
@@ -125,7 +141,6 @@
   background: var(--bg-secondary);
 }
 
-/* BOOK NOW BUTTON */
 .nav-btn {
   background: var(--primary-color);
   color: white;
@@ -143,7 +158,12 @@
   background: var(--primary-dark);
 }
 
-/* RESPONSIVE */
+.navbar button:focus-visible,
+.navbar a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 @media (max-width: 1024px) {
   .nav-links {
     gap: 20px;
@@ -151,32 +171,56 @@
 
   .navbar {
     padding: 15px 5%;
-    flex-wrap: wrap;
-    gap: 10px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar {
     padding: 12px 4%;
-    gap: 8px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .nav-controls {
+    order: 3;
+    margin-left: auto;
   }
 
   .nav-links {
-    gap: 12px;
-    margin: 0 10px;
+    display: none;
+    order: 4;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .nav-links a {
-    font-size: 12px;
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-btn {
+    padding: 8px 14px;
+    font-size: 13px;
   }
 
-  .color-palette {
-    padding: 0 10px;
-  }
-
-  .color-btn {
-    width: 16px;
-    height: 16px;
+  .nav-controls {
+    width: 100%;
+    justify-content: flex-end;
   }
 }

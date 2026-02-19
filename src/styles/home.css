@@ -43,7 +43,7 @@
   flex-wrap: wrap;
 }
 
-.hero-buttons button {
+.hero-buttons .hero-btn {
   padding: 14px 32px;
   border-radius: 8px;
   border: none;
@@ -53,22 +53,33 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-buttons button:hover {
+.hero-buttons .hero-btn:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.hero-buttons .outline {
+.hero-buttons .hero-btn.outline {
   background: var(--bg-primary);
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
 }
 
-.hero-buttons .outline:hover {
+.hero-buttons .hero-btn.outline:hover {
   background: var(--bg-secondary);
+}
+
+.hero-buttons .hero-btn:focus-visible,
+.featured-destinations .primary-btn:focus-visible,
+.explore-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 .hero-right {
@@ -183,6 +194,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featured-destinations .primary-btn:hover {
@@ -254,7 +269,7 @@
 }
 
 .honeymoon-features li:before {
-  content: "✓";
+  content: "\2713";
   position: absolute;
   left: 0;
   color: var(--primary-color);
@@ -271,6 +286,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .explore-btn:hover {
@@ -724,7 +743,7 @@
     gap: 12px;
   }
 
-  .hero-buttons button {
+  .hero-buttons .hero-btn {
     padding: 12px 24px;
     font-size: 14px;
   }

@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -36,25 +36,25 @@ export default function Home() {
   const services = [
     {
       id: 1,
-      icon: "✈",
+      icon: "\u2708",
       title: "Flight Booking",
       description: "Easy and quick flight reservations worldwide",
     },
     {
       id: 2,
-      icon: "🏨",
+      icon: "\uD83C\uDFE8",
       title: "Hotel Booking",
       description: "Best hotel rates and exclusive deals",
     },
     {
       id: 3,
-      icon: "🗺",
+      icon: "\uD83D\uDDFA",
       title: "Tour Planning",
       description: "Customized itineraries for your journey",
     },
     {
       id: 4,
-      icon: "🌍",
+      icon: "\uD83C\uDF0D",
       title: "24/7 Support",
       description: "Always here to help you",
     },
@@ -64,24 +64,21 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* HERO */}
       <section className="hero">
         <div className="hero-left">
           <h1>
             Explore the World With <span>Archiv Agency</span>
           </h1>
 
-          <p>
-            Discover unforgettable destinations and curated travel experiences.
-          </p>
+          <p>Discover unforgettable destinations and curated travel experiences.</p>
 
           <div className="hero-buttons">
-            <Link to="/booking">
-              <button>Plan Your Trip</button>
+            <Link to="/booking" className="hero-btn">
+              Plan Your Trip
             </Link>
 
-            <Link to="/packages">
-              <button className="outline">View Packages</button>
+            <Link to="/packages" className="hero-btn outline">
+              View Packages
             </Link>
           </div>
         </div>
@@ -91,7 +88,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED DESTINATIONS */}
       <section className="featured-destinations">
         <h2>Featured Destinations</h2>
         <p className="section-subtitle">Handpicked locations for your next adventure</p>
@@ -110,27 +106,29 @@ export default function Home() {
           ))}
         </div>
 
-        <Link to="/packages">
-          <button className="primary-btn">View All →</button>
+        <Link to="/packages" className="primary-btn">
+          View All {"->"}
         </Link>
       </section>
 
-      {/* HONEYMOON PACKAGES */}
       <section className="honeymoon-section">
         <div className="honeymoon-content">
           <div className="honeymoon-tag">Special Honeymoon</div>
           <h2>Special Honeymoon Packages</h2>
-          <p>Create unforgettable memories with your beloved on our exclusive honeymoon packages designed for romance and adventure.</p>
+          <p>
+            Create unforgettable memories with your beloved on our exclusive honeymoon packages designed for romance and
+            adventure.
+          </p>
 
           <ul className="honeymoon-features">
-            <li>✓ Luxury accommodations in exotic locations</li>
-            <li>✓ Private dining experiences and spa treatments</li>
-            <li>✓ Customized romantic itineraries</li>
-            <li>✓ 24/7 concierge service</li>
+            <li>Luxury accommodations in exotic locations</li>
+            <li>Private dining experiences and spa treatments</li>
+            <li>Customized romantic itineraries</li>
+            <li>24/7 concierge service</li>
           </ul>
 
-          <Link to="/honeymoon">
-            <button className="explore-btn">Explore Packages →</button>
+          <Link to="/honeymoon" className="explore-btn">
+            Explore Packages {"->"}
           </Link>
         </div>
 
@@ -139,13 +137,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
       <section className="about-section">
         <div className="about-left">
           <div className="about-tag">About Us</div>
           <h2>About Archiv Agency</h2>
           <p>
-            We are a leading travel agency dedicated to creating extraordinary travel experiences. With years of expertise and passionate travel consultants, we curate bespoke journeys that transform the way you explore the world.
+            We are a leading travel agency dedicated to creating extraordinary travel experiences. With years of expertise
+            and passionate travel consultants, we curate bespoke journeys that transform the way you explore the world.
           </p>
 
           <div className="stats-container">
@@ -169,7 +167,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section className="services-section">
         <h2>Our Services</h2>
         <p className="section-subtitle">Everything you need for a perfect journey</p>
@@ -189,3 +186,4 @@ export default function Home() {
     </>
   );
 }
+

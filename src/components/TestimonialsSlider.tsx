@@ -16,8 +16,8 @@ export default function TestimonialsSlider() {
 
   return (
     <div className="testimonials">
-      {testimonials.map((t, i) => (
-        <div key={i} className="testimonial-card">
+      {testimonials.map((t) => (
+        <div key={t.name} className="testimonial-card">
           <p>"{t.text}"</p>
           <h4>- {t.name}</h4>
         </div>
@@ -25,3 +25,4 @@ export default function TestimonialsSlider() {
     </div>
   );
 }
+

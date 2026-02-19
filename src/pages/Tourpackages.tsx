@@ -68,7 +68,7 @@ export default function TourPackages() {
       <section className="packages-page">
         <h1>Tour Packages</h1>
         <p className="subtitle">
-          Curated experiences to the world’s most amazing destinations
+          Curated experiences to the world's most amazing destinations
         </p>
 
         <div className="banner">
@@ -76,8 +76,8 @@ export default function TourPackages() {
         </div>
 
         <div className="packages-grid">
-          {packages.map((pkg, index) => (
-            <PackageCard key={index} {...pkg} />
+          {packages.map((pkg) => (
+            <PackageCard key={pkg.title} {...pkg} />
           ))}
         </div>
       </section>
@@ -86,3 +86,4 @@ export default function TourPackages() {
     </>
   );
 }
+

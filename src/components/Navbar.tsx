@@ -6,89 +6,103 @@ import "../styles/navbar.css";
 export default function Navbar() {
   const { theme, colorPalette, setTheme, setColorPalette } = useTheme();
   const [showColorPalette, setShowColorPalette] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const colors = ["purple", "orange", "blue", "green", "red"];
 
+  const closeMenus = () => {
+    setIsMobileMenuOpen(false);
+    setShowColorPalette(false);
+  };
+
   return (
     <nav className="navbar">
-      {/* LOGO */}
-      <Link to="/" className="logo-wrap">
+      <Link to="/" className="logo-wrap" onClick={closeMenus}>
         <img src="/images/logo.png" alt="Archiv logo" className="logo-img" />
         <h2 className="logo">Archiv</h2>
       </Link>
 
-      {/* NAV LINKS */}
-      <ul className="nav-links">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
+      <button
+        type="button"
+        className="menu-toggle"
+        onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isMobileMenuOpen}
+        aria-controls="primary-navigation"
+      >
+        {isMobileMenuOpen ? "\u2715" : "\u2630"}
+      </button>
 
+      <ul id="primary-navigation" className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/" onClick={closeMenus}>Home</Link>
         </li>
-
         <li>
-          <Link to="/tourguide">Tour Guide</Link>
+          <Link to="/about" onClick={closeMenus}>About</Link>
         </li>
-
         <li>
-          <Link to="/services">Services</Link>
+          <Link to="/tourguide" onClick={closeMenus}>Tour Guide</Link>
         </li>
-
         <li>
-          <Link to="/packages">Packages</Link>
+          <Link to="/services" onClick={closeMenus}>Services</Link>
         </li>
-
         <li>
-          <Link to="/vehicles">Vehicles</Link>
+          <Link to="/packages" onClick={closeMenus}>Packages</Link>
         </li>
-
         <li>
-          <Link to="/honeymoon">Honeymoon Offers</Link>
+          <Link to="/vehicles" onClick={closeMenus}>Vehicles</Link>
+        </li>
+        <li>
+          <Link to="/honeymoon" onClick={closeMenus}>Honeymoon Offers</Link>
         </li>
       </ul>
 
-      {/* COLOR PALETTE BUTTON */}
-      <div className="color-palette-container">
-        <button 
-          className="color-palette-btn"
-          onClick={() => setShowColorPalette(!showColorPalette)}
-          title="Change color scheme"
+      <div className="nav-controls">
+        <div className="color-palette-container">
+          <button
+            type="button"
+            className="color-palette-btn"
+            onClick={() => setShowColorPalette((prev) => !prev)}
+            title="Change color scheme"
+            aria-label="Change color scheme"
+          >
+            {"\uD83C\uDFA8"}
+          </button>
+
+          {showColorPalette && (
+            <div className="color-palette-dropdown" role="menu" aria-label="Color palette options">
+              {colors.map((color) => (
+                <button
+                  type="button"
+                  key={color}
+                  className={`color-option ${colorPalette === color ? "active" : ""}`}
+                  style={{ backgroundColor: getColorValue(color) }}
+                  onClick={() => {
+                    setColorPalette(color);
+                    setShowColorPalette(false);
+                  }}
+                  title={color}
+                  aria-label={`Set ${color} color palette`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
         >
-          🎨
+          {theme === "light" ? "\uD83C\uDF19" : "\u2600\uFE0F"}
         </button>
-        
-        {showColorPalette && (
-          <div className="color-palette-dropdown">
-            {colors.map((color) => (
-              <button
-                key={color}
-                className={`color-option ${colorPalette === color ? "active" : ""}`}
-                style={{ backgroundColor: getColorValue(color) }}
-                onClick={() => {
-                  setColorPalette(color);
-                  setShowColorPalette(false);
-                }}
-                title={color}
-              />
-            ))}
-          </div>
-        )}
+
+        <Link to="/booking" className="nav-btn" onClick={closeMenus}>
+          Book Now
+        </Link>
       </div>
-
-      {/* THEME TOGGLE */}
-      <button
-        className="theme-toggle"
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      >
-        {theme === "light" ? "🌙" : "☀️"}
-      </button>
-
-      {/* BOOK BUTTON */}
-      <Link to="/booking" className="nav-btn">
-        Book Now
-      </Link>
     </nav>
   );
 }
