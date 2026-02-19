@@ -1,0 +1,151 @@
+/* CSS VARIABLES FOR THEME AND COLOR PALETTE */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #fdfaf5;
+  --text-primary: #222;
+  --text-secondary: #666;
+  --border-color: #eee;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* Primary Color - Default Purple */
+  --primary-color: #6c4cf1;
+  --primary-dark: #5a3ee0;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --bg-tertiary: #252525;
+  --text-primary: #f0f0f0;
+  --text-secondary: #bbb;
+  --border-color: #444;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* COLOR PALETTE VARIATIONS */
+[data-color="purple"] {
+  --primary-color: #6c4cf1;
+  --primary-dark: #5a3ee0;
+}
+
+[data-color="orange"] {
+  --primary-color: #ff8c42;
+  --primary-dark: #e67e38;
+}
+
+[data-color="blue"] {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+}
+
+[data-color="green"] {
+  --primary-color: #16a34a;
+  --primary-dark: #15803d;
+}
+
+[data-color="red"] {
+  --primary-color: #dc2626;
+  --primary-dark: #b91c1c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* FULL PAGE DARK THEME OVERRIDES */
+body.dark-theme {
+  background: #0f131d !important;
+  color: #f7f9ff !important;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .footer,
+body.dark-theme section,
+body.dark-theme .hero,
+body.dark-theme .featured-destinations,
+body.dark-theme .honeymoon-section,
+body.dark-theme .about-section,
+body.dark-theme .services-section,
+body.dark-theme .testimonials-section,
+body.dark-theme .contact-section,
+body.dark-theme .packages-page,
+body.dark-theme .honeymoon-page,
+body.dark-theme .vehicles-page,
+body.dark-theme .booking-page,
+body.dark-theme .about-hero,
+body.dark-theme .about-story,
+body.dark-theme .about-values,
+body.dark-theme .about-stats-section,
+body.dark-theme .srv-hero,
+body.dark-theme .srv-banner,
+body.dark-theme .srv-main,
+body.dark-theme .tg-hero,
+body.dark-theme .tg-why,
+body.dark-theme .tg-features,
+body.dark-theme .tg-team {
+  background: #141b2a !important;
+  border-color: #2e3a53 !important;
+}
+
+body.dark-theme .destination-card,
+body.dark-theme .service-card,
+body.dark-theme .package-card,
+body.dark-theme .honeymoon-card,
+body.dark-theme .vehicle-card,
+body.dark-theme .srv-card,
+body.dark-theme .value-card,
+body.dark-theme .tg-card,
+body.dark-theme .tg-profile,
+body.dark-theme .why-card,
+body.dark-theme .booking-form-card,
+body.dark-theme .payment-card,
+body.dark-theme .contact-card,
+body.dark-theme .cta-section {
+  background: #1b2436 !important;
+  border-color: #31415f !important;
+}
+
+/* DARK MODE TYPOGRAPHY: bold + readable */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme a,
+body.dark-theme span,
+body.dark-theme label,
+body.dark-theme small,
+body.dark-theme strong {
+  color: #f4f7ff !important;
+  font-weight: 700 !important;
+}
+
+body.dark-theme .subtitle,
+body.dark-theme .section-subtitle,
+body.dark-theme .service-text,
+body.dark-theme .location,
+body.dark-theme .duration,
+body.dark-theme .info-item p,
+body.dark-theme .footer-col p,
+body.dark-theme .footer-col a,
+body.dark-theme .nav-links a {
+  color: #d7deef !important;
+}

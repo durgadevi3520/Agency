@@ -1,0 +1,110 @@
+body {
+  background: #fbf7f0;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.srv-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  border-bottom: 1px solid #e0d8cf;
+}
+
+.srv-hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.srv-hero p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Banner */
+.srv-banner {
+  width: 85%;
+  margin: 50px auto;
+  background: #f3efe6;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.srv-banner img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+}
+
+.srv-banner-labels {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a2a2a;
+  gap: 30px;
+}
+
+/* Main Section */
+.srv-main {
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.srv-main h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.srv-sub {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 60px;
+}
+
+/* Grid */
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.srv-card {
+  background: white;
+  border: 1px solid #d8d8d8;
+  border-radius: 12px;
+  padding: 35px;
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+}
+
+.srv-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.srv-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.srv-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.srv-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}

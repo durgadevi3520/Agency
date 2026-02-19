@@ -1,0 +1,331 @@
+﻿:root {
+  --section-space: clamp(56px, 8vw, 110px);
+  --card-lift-shadow: 0 22px 42px rgba(19, 33, 68, 0.16);
+  --card-rest-shadow: 0 10px 24px rgba(19, 33, 68, 0.08);
+  --divider-color: rgba(88, 112, 176, 0.35);
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.07), transparent 38%),
+    radial-gradient(circle at 85% 0%, rgba(255, 140, 66, 0.08), transparent 36%),
+    var(--bg-primary);
+}
+
+body::before,
+body::after {
+  position: fixed;
+  font-size: clamp(20px, 2vw, 30px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatTravel 12s ease-in-out infinite;
+}
+
+body::before {
+  content: "\2708";
+  top: 14%;
+  left: 3%;
+}
+
+body::after {
+  content: "\1F9ED";
+  right: 4%;
+  top: 62%;
+  animation-delay: 2s;
+}
+
+section {
+  position: relative;
+}
+
+section + section {
+  margin-top: clamp(36px, 5vw, 64px);
+}
+
+section + section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: clamp(-32px, -4vw, -24px);
+  transform: translateX(-50%);
+  width: min(84%, 980px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+}
+
+section + section::after {
+  content: "\2726";
+  position: absolute;
+  left: 50%;
+  top: clamp(-42px, -5vw, -34px);
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: var(--primary-color);
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.88);
+}
+
+.hero,
+.featured-destinations,
+.honeymoon-section,
+.about-section,
+.services-section,
+.testimonials-section,
+.contact-section,
+.about-hero,
+.about-story,
+.about-values,
+.about-stats-section,
+.srv-hero,
+.srv-banner,
+.srv-main,
+.tg-hero,
+.tg-why,
+.tg-features,
+.tg-team,
+.packages-page,
+.honeymoon-page,
+.vehicles-page,
+.booking-page {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+p,
+li {
+  line-height: 1.75;
+}
+
+.destination-card,
+.service-card,
+.package-card,
+.honeymoon-card,
+.vehicle-card,
+.srv-card,
+.value-card,
+.tg-card,
+.tg-profile,
+.why-card,
+.booking-form-card,
+.payment-card,
+.contact-card,
+.cta-section {
+  box-shadow: var(--card-rest-shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.destination-card:hover,
+.service-card:hover,
+.package-card:hover,
+.honeymoon-card:hover,
+.vehicle-card:hover,
+.srv-card:hover,
+.value-card:hover,
+.tg-card:hover,
+.tg-profile:hover,
+.why-card:hover,
+.booking-form-card:hover,
+.payment-card:hover,
+.contact-card:hover,
+.cta-section:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-lift-shadow);
+}
+
+.destination-card img,
+.package-card img,
+.honeymoon-card img,
+.hero-right img,
+.honeymoon-image img,
+.about-right img,
+.honeymoon-banner img,
+.banner img,
+.fleet-banner img,
+.srv-banner img,
+.about-story-img img,
+.tg-why-img img {
+  transition: transform 0.55s ease;
+}
+
+.destination-card:hover img,
+.package-card:hover img,
+.honeymoon-card:hover img,
+.hero-right:hover img,
+.honeymoon-image:hover img,
+.about-right:hover img,
+.srv-banner:hover img,
+.about-story-img:hover img,
+.tg-why-img:hover img {
+  transform: scale(1.04);
+}
+
+.hero-buttons button:not(.outline),
+.primary-btn,
+.explore-btn,
+.submit-btn,
+.card-bottom button,
+.package-bottom button,
+.vehicle-bottom button,
+form button,
+.cta-section button,
+.nav-btn {
+  position: relative;
+  border: none;
+  color: #fff;
+  background: linear-gradient(120deg, var(--primary-color), var(--primary-dark));
+  box-shadow: 0 10px 20px rgba(48, 69, 133, 0.2);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+}
+
+.hero-buttons button:not(.outline):hover,
+.primary-btn:hover,
+.explore-btn:hover,
+.submit-btn:hover,
+.card-bottom button:hover,
+.package-bottom button:hover,
+.vehicle-bottom button:hover,
+form button:hover,
+.cta-section button:hover,
+.nav-btn:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+  box-shadow: 0 12px 26px rgba(48, 69, 133, 0.3), 0 0 20px rgba(90, 130, 255, 0.28);
+}
+
+.hero-buttons .outline {
+  box-shadow: 0 0 0 1px rgba(101, 123, 181, 0.2), 0 8px 18px rgba(40, 54, 105, 0.12);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  transition:
+    opacity 0.72s ease var(--reveal-delay, 0ms),
+    transform 0.72s cubic-bezier(0.2, 0.65, 0.2, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes floatTravel {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(6deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-story,
+  .srv-main,
+  .tg-why,
+  .tg-features,
+  .tg-team,
+  .about-values,
+  .about-stats-section,
+  .packages-page,
+  .honeymoon-page,
+  .vehicles-page,
+  .booking-page {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .packages-grid,
+  .honeymoon-grid,
+  .vehicles-grid,
+  .why-grid,
+  .srv-grid,
+  .tg-feature-grid,
+  .values-grid,
+  .tg-team-grid,
+  .about-stats-section {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  section + section::before,
+  section + section::after {
+    display: none;
+  }
+
+  section + section {
+    margin-top: 16px;
+  }
+
+  .about-story,
+  .srv-main,
+  .tg-why,
+  .tg-features,
+  .tg-team,
+  .about-values,
+  .about-stats-section,
+  .packages-page,
+  .honeymoon-page,
+  .vehicles-page,
+  .booking-page {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-story,
+  .tg-why {
+    flex-direction: column;
+  }
+
+  .about-story-img img,
+  .tg-why-img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .packages-grid,
+  .honeymoon-grid,
+  .vehicles-grid,
+  .why-grid,
+  .srv-grid,
+  .values-grid,
+  .tg-feature-grid,
+  .tg-team-grid,
+  .about-stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-container,
+  .contact-container,
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,189 @@
+body {
+  background: #fbf7f0;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.tg-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  border-bottom: 1px solid #e0d8cf;
+}
+
+.tg-hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.tg-hero p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* WHY SECTION */
+.tg-why {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 80px;
+  gap: 50px;
+}
+
+.tg-why-text {
+  width: 55%;
+}
+
+.tg-why-text h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.tg-why-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+.tg-why-img img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* FEATURES */
+.tg-features {
+  padding: 100px 80px;
+  text-align: center;
+  background: #fbf7f0;
+}
+
+.tg-features h2 {
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.tg-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tg-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.tg-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tg-card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.tg-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.tg-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* TEAM */
+.tg-team {
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.tg-team h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.tg-team > p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 60px;
+}
+
+.tg-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tg-profile {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+}
+
+.tg-profile:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tg-profile h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.tg-profile span {
+  font-size: 13px;
+  color: #999;
+  display: block;
+}
+
+.tg-profile p {
+  font-size: 14px;
+  margin: 15px 0;
+  line-height: 1.8;
+  color: #555;
+}
+
+.tg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tg-tags button {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: default;
+  color: #666;
+  font-weight: 500;
+}
